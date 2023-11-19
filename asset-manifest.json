@@ -1,0 +1,23 @@
+{
+  "files": {
+    "main.css": "/react-pizza-app/static/css/main.45180dfa.css",
+    "main.js": "/react-pizza-app/static/js/main.9b3bc98e.js",
+    "static/js/787.29e423f1.chunk.js": "/react-pizza-app/static/js/787.29e423f1.chunk.js",
+    "static/media/margherita.jpg": "/react-pizza-app/static/media/margherita.d5d2c894309b79a7699d.jpg",
+    "static/media/baconbanana.png": "/react-pizza-app/static/media/baconbanana.24db48ba8c0ac0922321.png",
+    "static/media/hawaiian.jpg": "/react-pizza-app/static/media/hawaiian.f08387f76f3e70cef2d7.jpg",
+    "static/media/smokedsalmon.jpg": "/react-pizza-app/static/media/smokedsalmon.dd7619708f8284a8aea4.jpg",
+    "static/media/instagram.png": "/react-pizza-app/static/media/instagram.e719d8b29f452a16302d.png",
+    "static/media/currybanana.jpg": "/react-pizza-app/static/media/currybanana.e54ae85fb403f41be98a.jpg",
+    "static/media/chorizo.jpg": "/react-pizza-app/static/media/chorizo.1d79f6e0e29af247b6a7.jpg",
+    "static/media/twitter.png": "/react-pizza-app/static/media/twitter.93ac3f9a344ecd5d01a4.png",
+    "index.html": "/react-pizza-app/index.html",
+    "main.45180dfa.css.map": "/react-pizza-app/static/css/main.45180dfa.css.map",
+    "main.9b3bc98e.js.map": "/react-pizza-app/static/js/main.9b3bc98e.js.map",
+    "787.29e423f1.chunk.js.map": "/react-pizza-app/static/js/787.29e423f1.chunk.js.map"
+  },
+  "entrypoints": [
+    "static/css/main.45180dfa.css",
+    "static/js/main.9b3bc98e.js"
+  ]
+}
