@@ -1,0 +1,191 @@
+/* App.css */
+@import url('https://fonts.googleapis.com/css2?family=Quattrocento+Sans:ital@1&display=swap');
+
+body {
+font-family: 'Quattrocento Sans', sans-serif;
+	background-color: #ffffff;
+}
+
+
+.App-container {
+	width: 100%;
+	background-color: #E25E3E;
+}
+
+.App-header {
+	width: 100%;
+	height: 80px;
+	display: flex;
+	align-items: center;
+	justify-content: space-between;
+	padding: 0 4%;
+	gap: 10px;
+}
+
+.App-title {
+	text-shadow: 2px 2px 4px #FFBB5C;
+	text-align: center;
+	font-size: 0.9rem;
+	color: white;
+}
+
+.Nav-left {
+	display: flex;
+	align-items: center;
+	justify-content: flex-start;
+}
+
+.Nav-right {
+	display: flex;
+	align-items: center;
+	justify-content: flex-end;
+	gap: 10%;
+}
+
+.Nav-button {
+	padding: 2% 4%;
+	border-radius: 5px;
+	background-color: #FFBB5C;
+	transition:all .2s ease-out; 
+	box-shadow:inset 0 -3px 0 0 #00000033,
+	0 1px 0 0 #d98e20,
+	0 2px 0 0 #d98e20;
+}
+
+.Nav-button:hover {
+	color:#444;
+}
+
+.Nav-button:active {
+	color:#222;
+	box-shadow:inset 0 0 0 0,
+	0px 0px 0 0 #d98e20;
+}
+
+.Nav-link {
+	display: flex;
+	align-items: center;
+	color: white;
+	text-decoration: none;
+	font-size: 0.8rem;
+}
+
+#login {
+	width: 100px;
+	padding: 3% 0;
+}
+
+@media (max-width: 400px) {
+	.App-container {
+		width: 100%;
+		background-color: #E25E3E;
+	}
+
+	.App-header {
+		width: 100%;
+		height: 100px;
+		display: flex;
+		flex-direction: column;
+		align-items: center;
+		justify-content: flex-start;
+		padding-top: 2%;
+	}
+
+	.App-title {
+		text-shadow: 2px 2px 4px #FFBB5C;
+		text-align: center;
+		font-size: 1.1rem;
+		color: white;
+		margin: 0 auto;
+	}
+
+	.Nav-right {
+		display: flex;
+		align-items: center;
+		justify-content: flex-end;
+		gap: 10%;
+	}
+}
+
+@media (min-width: 601px) {
+
+	body {
+	font-family: 'Quattrocento Sans', sans-serif;
+		margin: 0;
+		padding: 0;
+		background-color: #ffffff;
+	}
+
+
+	.App-container {
+		width: 100%;
+		background-color: #E25E3E;
+		display: flex;
+		align-items: center;
+		justify-content: center;
+	}
+
+	.App-header {
+		width: 80%;
+		height: 80px;
+		display: flex;
+		align-items: center;
+		justify-content: space-between;
+	}
+
+	.Nav-left {
+		width: 50%;
+		display: flex;
+		align-items: center;
+		justify-content: flex-start;
+	}
+
+	.Nav-right {
+		width: 50%;
+		display: flex;
+		align-items: center;
+		justify-content: flex-end;
+		gap: 25px;
+	}
+
+	.App-title {
+		text-shadow: 2px 2px 4px #FFBB5C;
+		text-align: center;
+		font-size: 1.6rem;
+		color: white;
+	}
+
+	.Nav-button {
+		padding: 2% 4%;
+		border-radius: 5px;
+		background-color: #FFBB5C;
+		transition:all .2s ease-out; 
+		box-shadow:inset 0 -3px 0 0 #00000033,
+		0 1px 0 0 #d98e20,
+		0 2px 0 0 #d98e20;
+	}
+
+	.Nav-button:hover {
+		color:#444;
+	}
+
+	.Nav-button:active {
+		color:#222;
+		box-shadow:inset 0 0 0 0,
+		0px 0px 0 0 #d98e20;
+	}
+
+	.Nav-link {
+		display: flex;
+		align-items: center;
+		color: white;
+		text-decoration: none;
+		font-size: 0.9rem;
+		gap: 5px;
+	}
+
+	#login {
+		width: 115px;
+		padding: 3% 0;
+	}
+}

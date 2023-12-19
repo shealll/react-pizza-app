@@ -1,0 +1,248 @@
+
+/* Checkout Order*/
+.order {
+    margin: 1% 10%;
+	display: flex;
+	flex-direction: column;
+	align-items: center;
+    margin-bottom: 4%;
+}
+
+.summary-container {
+    width: 100%;
+    display: grid;
+    align-items: center;
+    justify-content: center;
+    border: 2px solid #FCF5ED;
+	border-radius: 10px;
+	box-shadow: 0px 1px 1px #FFBB5C;
+    margin-bottom: 4%;
+    padding-bottom: 2%;
+}
+
+.title-container {
+    width: 100%;
+    height: 50px;
+    border-bottom: 1px solid lightgray;
+}
+
+.order h1 {
+	font-size: 1rem;
+	margin-top: 30px;
+    padding-bottom: 6%;
+}
+
+.order h2 {
+    padding-left: 4%;
+	text-align: left;
+	font-size: 0.9rem;
+}
+
+.align-row {
+    display: flex;
+    justify-content: center;
+}
+
+.align-row p {
+    font-size: 0.7rem;
+    margin: 1% auto;
+}
+
+.align-left, .align-right{
+    width: 200px;
+    margin: 5% 0;
+}
+
+.align-right {
+    text-align: right;
+}
+
+/* Checkout Item Card*/
+.checkItem {
+	height: 130px;
+	display: flex;
+    justify-content: space-between;
+	align-items: center;
+	padding: 6%;
+	border-bottom: 1px solid lightgray;
+    gap: 20px;
+}
+
+.checkItem img {
+	width: 60px;
+	border-radius: 10px;
+}
+
+.checkItem h3{
+	font-size: 0.8rem;
+    text-align: center;
+}
+
+.checkItem p {
+	font-size: 0.8rem;
+}
+
+/* Personal Details*/
+.personal {
+    width: 450px;
+    font-size: 0.7rem;
+    text-align: left;
+    margin: 2%;
+    display: flex;
+    flex-direction: column;
+    align-items: flex-end;
+    padding: 3%;
+    margin-right: 50px;
+}
+
+.personal input {
+    width: 320px;
+    font-size: 0.7rem;
+}
+
+.payment-desc p {
+    width: 400px;
+    padding-top: 4%;
+    margin: 2% auto;
+    text-align: left;
+}
+
+.payment-radio {
+    width: 400px;
+}
+
+.payment-radio span{
+    text-align: left;
+    width: 380px;
+    padding: 3% 3%;
+    border: 2px solid #FCF5ED;
+    color: grey;
+    display: inline-block;
+    margin-top: 2%;
+    cursor: pointer;
+    font-family: Arial, Helvetica, sans-serif;
+    font-size: 0.8rem;
+}
+
+.align-icon {
+    width: 50px;
+    float: right;
+}
+
+.payment-radio img {
+    width: 30px;
+    text-align: right;
+}
+
+#placeorder {
+    width: 200px;
+    margin-bottom: 3%;
+}
+
+@media (max-width: 600px) {
+
+    .order h1 {
+        font-size: 0.9rem;
+    }
+
+    .summary-container {
+        width: 100%;
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        justify-content: center;
+    }    
+
+    .title-container {
+        width: 100%;
+        height: 50px;
+        border-bottom: 1px solid lightgray;
+    }
+
+    .title-container h2 {
+        text-align: center;
+    }
+
+    .personal {
+        width: 70%;
+        font-size: 0.7rem;
+        text-align: left;
+        display: flex;
+        flex-direction: column;
+        align-items: flex-start;
+        margin: 0 auto;
+    }
+    
+    .personal input {
+        width: 100%;
+        font-size: 0.7rem;
+    }
+    
+    /* Checkout Item Card*/
+    .checkItem {
+        width: 80%;
+        height: 130px;
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+        padding: 6%;
+        border-bottom: 1px solid lightgray;
+    }
+
+    .checkItem img {
+        width: 60px;
+        border-radius: 10px;
+    }
+
+    .checkItem h3{
+        font-size: 0.6rem;
+        text-align: center;
+    }
+
+    .checkItem p {
+        font-size: 0.6rem;
+    }
+
+    .align-row {
+        width: 80%;
+        padding: 2%;
+        display: flex;
+        justify-content: center;
+    }
+    
+    .align-row p {
+        font-size: 0.7rem;
+        margin: 1% auto;
+    }
+    
+    .align-left, .align-right{
+        width: 100%;
+    }
+
+    .payment-desc {
+        width: 80%;
+    }
+
+    .payment-desc p {
+        padding-top: 4%;
+        margin: 2% auto;
+        text-align: left;
+    }
+    
+    .payment-radio {
+        width: 80%;
+    }
+
+    .payment-radio span{
+        text-align: left;
+        width: 100%;
+        padding: 3% 3%;
+        border: 2px solid #FCF5ED;
+        color: grey;
+        display: inline-block;
+        margin-top: 2%;
+        cursor: pointer;
+        font-family: Arial, Helvetica, sans-serif;
+        font-size: 0.8rem;
+    }
+}

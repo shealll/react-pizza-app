@@ -1,0 +1,118 @@
+.footer-container {
+    padding-top: 5%;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+}
+
+.review-container {
+    width: 100%;
+    height: auto;
+    padding: 2% 10%;
+    background-color: #FCF5ED;
+    display: flex;
+    justify-content: space-evenly;
+    align-items: flex-start;
+    gap: 30px;
+}
+
+.review-card {
+    width: 25%;
+    height: auto;
+    border-radius: 10px;
+}
+
+.review-card p {
+    font-size: 0.6rem;
+    text-align: left;
+}
+
+.contact-container {
+    width: 100%;
+    height: auto;
+    padding: 5% 10%;
+    background-color: white;
+    display: flex;
+    justify-content: center;
+    align-items: flex-start;
+    gap: 10%;
+}
+
+.faq-col {
+    display: flex;
+    flex-direction: column;
+    text-align: left;
+    font-family: sans-serif;
+}
+
+.faq-col p {
+    font-size: 0.6rem;
+    font-weight: bold;
+}
+
+.faq-col a{
+    text-decoration: none;
+    font-size: 0.6rem;
+    padding: 1% 0;
+    margin: 3% 0;
+    color: black;
+}
+
+.bar {
+    width: 100%;
+    display: flex;
+    justify-content: space-between;
+    margin: 1% auto;
+    border-top: 2px solid #FFBB5C;
+}
+
+.bar-left {
+    width: 50%;
+    padding-left: 10px;
+}
+
+.bar-left p {
+    font-size: 0.6rem;
+}
+
+.social-links {
+    width: 50%;
+    display: flex;
+    justify-content: flex-end;
+}
+
+.social-links a {
+    margin: 2%;
+}
+
+.social-img {
+    width: 20px;
+}
+
+@media (max-width: 600px) {
+    .review-card p {
+        font-size: 0;
+    }
+
+    .faq-col p {
+        font-size: 0.5rem;
+        font-weight: bold;
+    }
+    
+    .faq-col a{
+        text-decoration: none;
+        font-size: 0.5rem;
+        padding: 1% 0;
+        margin: 3% 0;
+        color: black;
+    }
+
+    .bar-left p {
+        font-size: 0.4rem;
+    }
+
+    .social-links a {
+        margin: 3%;
+    }
+}

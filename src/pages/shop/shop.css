@@ -1,0 +1,259 @@
+
+/* Search Component */
+
+.search-container {
+  background-color: #FFBB5C;
+	display: flex;
+	align-items: center;
+	justify-content: center;
+}
+.search-column {
+  flex: 1;
+	max-width: 100%;
+	height: 50px;
+  display: flex;
+	align-items: center;
+	justify-content: space-between;
+}
+
+.search-bar {
+	width: 300px;
+	margin: 10px auto;
+	display: flex;
+	align-items: center;
+	background-color: white;
+	border-radius: 20px;
+	padding: 1px 10px;
+}
+
+.search-bar input {
+	padding: 4px 8px;
+	border: none;
+	border-radius: 5px;
+	font-size: 16px;
+	background-color: #ffffff;
+	transition: background-color 0.3s ease-in-out;
+}
+
+.search-bar input:focus {
+	outline: none;
+	background-color: #ffffff;
+}
+
+.content-container {
+  margin: 1% 10%;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+/* Product Display */
+.product-heading {
+  width: 80%;
+  text-align: left;
+  font-size: 1.3rem;
+}
+
+.product-list {
+  width: 80%;
+  padding-bottom: 50px;
+  display: grid;
+  align-items: center;
+  gap: 10px;
+}
+
+.product {
+  background-color: #FCF5ED;
+  border: 2px solid #FCF5ED;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  height: 200px;
+  text-align: center;
+  border-radius: 10px;
+  cursor: pointer;
+  position: relative;
+  flex-basis: 100%;
+  padding: 4%;
+}
+
+.product:hover {
+    border: 2px solid #FFBB5C;
+}
+
+table {
+  padding: 3%;
+}
+
+.product img {
+  width: 120px;
+  height: auto;
+  border-radius: 10px;
+}
+
+.product h2 {
+  font-size: 1rem;
+  color: #323754;
+  margin: 0;
+}
+
+.product p, h3 {
+  font-size: 0.9rem;
+  color: #777;
+  margin: 0;
+}
+
+.product h3 {
+font-size: 0.7rem;
+}
+
+.add-to-cart-button {
+	background-color: #FF9B50;
+	border: none;
+	color: white;
+  padding: 9px 15px;
+  font-size: 0.8rem;
+	border-radius: 10px;
+  margin-top: 10px;
+	cursor: pointer;
+	transition: background-color 0.2s ease-in-out;
+}
+
+.add-to-cart-button:hover {
+	background-color: #FFBB5C;
+}
+
+@media (max-width: 600px) {
+
+  .content-container {
+    margin: 0;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+  }
+
+    /* Product Display */
+  .product-heading {
+    padding-left: 10%;
+    width: 100%;
+    text-align: left;
+    font-size: 0.9rem;
+  }
+  
+  .product-list {
+    width: 100%;
+    padding-bottom: 50px;
+    display: grid;
+    justify-content: space-evenly;
+    align-items: center;
+    gap: 10px;
+  }
+  
+  .product {
+    background-color: #FCF5ED;
+    border: 2px solid #FCF5ED;
+    display: flex;
+    justify-content: space-evenly;
+    align-items: center;
+    height: 160px;
+    text-align: center;
+    cursor: pointer;
+    position: relative;
+    flex-basis: 100%;
+    padding: 2%;
+  }
+  
+  table {
+    padding: 0;
+    padding-left: 2%;
+  }
+
+  .product img {
+    width: 80px;
+  }
+
+  .product h2 {
+    font-size: 0.8rem;
+    color: #323754;
+    margin: 0 auto;
+  }
+  
+  .product p, h3 {
+    font-size: 0.7rem;
+    color: #777;
+    margin: 0 auto;
+  }
+  
+  .product h3 {
+  font-size: 0.6rem;
+  }
+
+  .add-to-cart-button {
+    padding: 8px 15px;
+    font-size: 0.7rem;
+    margin-bottom: 4%;
+  }
+  
+}
+
+@media (min-width: 992px) {
+
+  /* Product Display */
+  .product-heading {
+    width: 100%;
+    text-align: left;
+    font-size: 1.2rem;
+  }
+
+  .product-list {
+    width: 100%;
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    align-items: center;
+    justify-content: space-between;
+    gap: 10px;
+  }
+
+  .product {
+    background-color: #FCF5ED;
+    border: 2px solid #FCF5ED;
+    display: flex;
+    justify-content: center;
+    height: 200px;
+    padding: 2%;
+    text-align: center;
+    border-radius: 10px;
+    cursor: pointer;
+    position: relative;
+    flex-basis: 28%;
+  }
+
+  .product img {
+    width: 100px;
+  }
+
+  .product h2 {
+    font-size: 0.8rem;
+    margin: 5px 0;
+    color: #323754;
+  }
+
+  .product p {
+    font-size: 0.7rem;
+    color: #777;
+    margin: 2px auto;
+  }
+
+  .product h3 {
+    font-size: 0.6rem;
+    color: #777;
+    margin: 2px auto;
+  }
+
+  .add-to-cart-button {
+    padding: 8px 15px;
+    font-size: 0.6rem;
+  }
+  
+
+}
