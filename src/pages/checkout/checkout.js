@@ -1,22 +1,31 @@
-import React, { useContext } from "react";
+import React, { useContext} from "react";
 import { PizzaContext } from "../../context/pizza-context";
-import { PIZZA } from "../../products";
+import { PIZZA } from "../../data/products";
 import { CheckoutItem } from "./checkout-item";
 import { useNavigate } from "react-router-dom";
-
-import cash from "../../images/cash.png";
-import visa from "../../images/visa.png";
-import touchngo from "../../images/touchngo.png";
-import online from "../../images/online.png";
+import DropIn from 'braintree-web-drop-in-react';
+import {Oval} from 'react-loader-spinner';
 
 import "./checkout.css";
+
 export const Checkout = () => {
-    const {cartItems, getTotalCartAmount, formData, handleSubmit, handleChange, overallFormErrorMessage, handleRadioButton, selectedRadio} = useContext(PizzaContext);
-    const totalAmount = (getTotalCartAmount()).toFixed(2);
-    const tax = (totalAmount * 0.06).toFixed(2);
+
+    const {cartItems, getTotalCartAmount, formData, handleSubmit, 
+        handleChange, clientToken, loading, processingOrder, 
+        APIRequest, success, setData, handleContactChange, isError, formError, setTotal} = useContext(PizzaContext);
+    const totalAmount = (getTotalCartAmount().toFixed(2));
+    const subTotal = (getTotalCartAmount());
+    const tax = (subTotal * 0.06).toFixed(2);
     const Del = 4.00;
+    const num = subTotal + subTotal*0.06 + Del;
+    const bigTotal = num.toFixed(2);
+    setTotal(bigTotal);
     const navigate = useNavigate(); 
 
+    APIRequest();
+
+    if (success)
+        return navigate("/thank-you");
 
   return (
       <div className="order">
@@ -34,28 +43,52 @@ export const Checkout = () => {
                     <div className="checkout">
                         <div className="personal">
                             <span>
-                            <label htmlFor="add1">Address Line 1 : </label>
-                            <input type="text" id="add1" name="add1" value={formData.add1} onChange={handleChange} maxLength={50} required/>
+                            <label htmlFor="street_add">Street Address : </label>
+                            <textarea
+                                type="text" 
+                                id="street_add" 
+                                name="street_add" 
+                                value={formData.street_add} 
+                                onChange={handleChange} 
+                                maxLength={200} 
+                                required >
+                            </textarea>
                             </span>
                             <br/>
                             <span>
-                            <label htmlFor="add2">Address Line 2 : </label>
-                            <input type="text" id="add2" name="add2" value={formData.add2} onChange={handleChange} maxLength={50}/>
-                            </span>
-                            <br/>
-                            <span>
-                            <label htmlFor="add3">Address Line 3 : </label>
-                            <input type="text" id="add3" name="add3" value={formData.add3} onChange={handleChange} maxLength={50}/>
+                            <label htmlFor="city">City : </label>
+                            <input                                  
+                                type="text" 
+                                id="city" 
+                                name="city" 
+                                value={formData.city} 
+                                onChange={handleChange} 
+                                maxLength={50}
+                                required/>
                             </span>
                             <br/>
                             <span>
                             <label htmlFor="postcode">Postal Code : </label>
-                            <input type="postcode" id="postcode" name="postcode" value={formData.postcode} onChange={handleChange} maxLength={5}/>
+                            <input                                  
+                                type="postcode" 
+                                id="postcode" 
+                                name="postcode" 
+                                value={formData.postcode} 
+                                onChange={handleChange} 
+                                maxLength={5}
+                                required/>
                             </span>
                             <br/>
                             <span>
                             <label htmlFor="state">State : </label>
-                            <input type="state" id="state" name="state" value={formData.state} onChange={handleChange} maxLength={25}/>
+                            <input                                 
+                                type="state" 
+                                id="state" 
+                                name="state" 
+                                value={formData.state} 
+                                onChange={handleChange} 
+                                maxLength={25}
+                                required/>
                             </span>
                         </div>
                     </div>
@@ -77,11 +110,13 @@ export const Checkout = () => {
                                 <p>Subtotal:</p>
                                 <p className="instructions"> Incl. Tax:</p>
                                 <p> Delivery Fees:</p>
+                                <p id="bigtotal"> Total: </p>
                             </div>
                             <div className="align-right">
                                 <p>RM{totalAmount}</p>
                                 <p className="instructions"> RM{tax}</p>
                                 <p> RM{Del} </p>
+                                <p id="bigtotal"> RM{bigTotal} </p>
                             </div>
                         </div>
                     </div>
@@ -95,103 +130,113 @@ export const Checkout = () => {
                     <div className="checkout">
                         <div className="personal">
                             <span>
-                            <label htmlFor="fname">First Name : </label>
-                            <input type="text" id="fname" name="fname" value={formData.fname} onChange={handleChange} maxLength={25} required/>
+                            <label htmlFor="first_name">First Name : </label>
+                            <input                                  
+                                type="text" 
+                                id="first_name" 
+                                name="first_name" 
+                                value={formData.first_name} 
+                                onChange={handleChange} 
+                                maxLength={25} 
+                                required/>
                             </span>
                             <br/>
                             <span>
-                            <label htmlFor="lname">Last Name : </label>
-                            <input type="text" id="lname" name="lname" value={formData.lname} onChange={handleChange} maxLength={25} required/>
+                            <label htmlFor="last_name">Last Name : </label>
+                            <input                                  
+                                type="text" 
+                                id="last_name" 
+                                name="last_name" 
+                                value={formData.last_name} 
+                                onChange={handleChange} 
+                                maxLength={25} 
+                                required/>
                             </span>
                             <br/>
                             <span>
-                            <label htmlFor="contact">Contact : </label>
-                            <input type="text" id="contact" name="contact" value={formData.contact} onChange={handleChange} minLength={10}maxLength={12} required/>
+                            <label htmlFor="phone">Contact <br></br>Number: </label>
+                            <input                                
+                                type="text" 
+                                id="phone" 
+                                name="phone" 
+                                value={formData.phone} 
+                                onChange={handleContactChange} 
+                                required/>     
                             </span>
+                            <div className="invalid-message">
+                            <p >{isError ? "Please enter a valid phone number." : ""}</p>
+                            </div>
                             <br/>
                             <span>
                             <label htmlFor="email">Email : </label>
-                            <input type="email" id="email" name="email" value={formData.email} onChange={handleChange} required/>
+                            <input                                 
+                                type="email" 
+                                id="email" 
+                                name="email" 
+                                value={formData.email} 
+                                onChange={handleChange} 
+                                required/>
                             </span>
                         </div>
                     </div>
                 </div>
 
                 {/*Payment Method*/}
-                <div className="summary-container">
-                    <div className="title-container">
-                        <h2>Payment Details</h2>
-                    </div>
                 <div className="checkout">
-                    <div className="payment-desc">
-                        <p className="instructions"> Payment Method </p>
-                    </div>
-                        <div className="payment-radio" required>
-                            <span>
-                            <input 
-                            type="radio" 
-                            id="cash" 
-                            name="payment_method" 
-                            value="Cash On Delivery"
-                            checked={selectedRadio === 'Cash On Delivery'}
-                            onChange={handleRadioButton}
-                            defaultChecked
-                            />
-                            <label htmlFor="cash" className="radio"> Cash on Delivery
-                            </label>
-                            <div className="align-icon">
-                            <img src={cash} alt="cash" />
+                    <div className="payment-container">
+                    {
+                        loading || clientToken === null ? (
+                            <div>
+                                <Oval
+                                    color="#00bfff"
+                                    width={50}
+                                    height={50}    
+                                />
                             </div>
-                            </span><br/>
-                            <span>
-
-                            <input 
-                            type="radio" 
-                            id="card" 
-                            name="payment_method" 
-                            value="Credit or debit card"
-                            checked={selectedRadio === "Credit or debit card"}
-                            onChange={handleRadioButton}
+                        ) : (
+                            <DropIn
+                                options={{
+                                    authorization: clientToken,
+                                    paypal: {
+                                        flow: 'vault'
+                                    }
+                                }}
+                                onInstance={ instance => setData({ instance: instance })}
                             />
-                            <label htmlFor="card"> Credit or debit card</label>
-                            <div className="align-icon">
-                            <img src={visa} alt="card"/>
+                        )
+                    }
+                    {
+                        processingOrder ? (
+                            <div>
+                                <Oval
+                                    color="#00bfff"
+                                    width={50}
+                                    height={50}    
+                                />
                             </div>
-                            </span><br/>
-                            <span>
-
-                            <input 
-                            type="radio" 
-                            id="touchngo" name="payment_method" value="Touch 'n Go eWallet (Alipay+)"
-                            checked={selectedRadio === "Touch 'n Go eWallet (Alipay+)"}
-                            onChange={handleRadioButton}
-                            />
-                            <label htmlFor="touchngo"> Touch 'n Go eWallet (Alipay+)</label>
-                            <div className="align-icon">
-                            <img src={touchngo} alt="touch n go"/>
+                        ) : (
+                            <div>
+                                {
+                                    loading ? (
+                                        <div></div>
+                                    ) : (
+                                        <div>
+                                            <div className="invalid-message">
+                                                <p >{formError ? "There is invalid data entered, please check again." : ""}</p></div>
+                                            <div className="align-button">
+                                                <button 
+                                                    type="submit" 
+                                                    id="placeorder"
+                                                >
+                                                    Place Order
+                                                </button>
+                                            </div>
+                                        </div>
+                                    )
+                                }
                             </div>
-                            </span><br/>
-                            <span>
-
-                            <input 
-                            type="radio" 
-                            id="online" 
-                            name="payment_method" value="Online Banking"
-                            checked={selectedRadio === "Online Banking"}
-                            onChange={handleRadioButton}
-                            />
-                            <label htmlFor="online"> Online Banking</label>
-                            <div className="align-icon">
-                            <img src={online} alt="online"/>
-                            </div>
-                            </span><br/>
-                        </div>
-                        <div className="align-button">
-                            <button type="submit" id="placeorder">
-                                Place Order
-                            </button>
-                            {overallFormErrorMessage && <p style={{ color: 'red' }}>{overallFormErrorMessage}</p>}
-                        </div>
+                        )
+                    }
                     </div>
                 </div>
             </div>

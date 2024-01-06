@@ -1,13 +1,13 @@
 import React, { useContext } from "react";
 import { PizzaContext } from "../../context/pizza-context";
-import { PIZZA } from "../../products";
+import { PIZZA } from "../../data/products";
 import { CartItem } from "./cart-item";
 import { useNavigate } from "react-router-dom";
 
 import "./cart.css";
 export const Cart = () => {
   const { cartItems, getTotalCartAmount} = useContext(PizzaContext);
-  const totalAmount = getTotalCartAmount();
+  const totalAmount = getTotalCartAmount().toFixed(2);
 
   const navigate = useNavigate(); 
 
@@ -28,7 +28,7 @@ export const Cart = () => {
                 <p id="instructions"> Delivery fees will be shown after you review order </p>
               </div>
               <div className="align-button">
-                <button onClick={() => navigate("/react-pizza-app")}> Continue Shopping </button>
+                <button onClick={() => navigate("/")}> Continue Shopping </button>
                 <button
                   onClick={() => {
                     navigate("/checkout");

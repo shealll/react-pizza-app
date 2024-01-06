@@ -1,5 +1,7 @@
 .footer-container {
-    padding-top: 5%;
+    margin-top: 5%;
+    border-top: 2px dashed #FF9B50;
+    height: auto;
     display: flex;
     flex-direction: column;
     justify-content: center;
@@ -24,8 +26,62 @@
 }
 
 .review-card p {
-    font-size: 0.6rem;
-    text-align: left;
+    font-size: 0.7rem;
+    text-align: justify;
+}
+
+.location-container {
+    width: 100%;
+    height: auto;
+    padding: 2% 10%;
+    background-color: rgb(255, 187, 92, 0.3);
+    display: flex;
+    flex-direction: column;
+}
+
+.location-container h3 {
+    background-color: #FF9B50;
+    color: white;
+    border: 2px solid #FFBB5C;
+    padding: 2% 4%;
+    border-radius: 10px;
+    font-size: 1.2rem;
+    font-weight: 400;
+    margin: 2% auto;
+    box-shadow: 10px 10px lightblue;
+}
+
+.location-data {
+    width: 100%;
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 20px;
+    margin: 2% 0;
+}
+
+.location-card {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    text-align: center;
+    background-color: #FCF5ED;
+    border: 1px solid #FFBB5C;
+    padding: 3% 6%;
+    margin: 2% 0;
+    border-radius: 10px;
+    box-shadow: 10px 10px lightblue;
+}
+
+#card-title {
+    font-size: 0.7rem;
+    font-weight: 600;
+}
+
+.location-card p {
+    margin: 3% auto;
+    font-size: 0.7rem;
+    font-weight: light;
 }
 
 .contact-container {
@@ -93,6 +149,34 @@
 @media (max-width: 600px) {
     .review-card p {
         font-size: 0;
+    }
+
+    .location-data {
+        width: 100%;
+        display: flex;
+        flex-direction: column;
+        gap: 10px;
+    }
+
+    .location-card {
+        display: flex;
+        flex-direction: row;
+        justify-content: center;
+        gap: 20px;
+        text-align: left;
+    }
+
+    #card-title {
+        font-size: 0.7rem;
+        font-weight: 600;
+    }
+
+    .location-container h3 {
+        font-size: 1rem;
+    }
+
+    .location-card p{
+        font-size: 0.6rem;
     }
 
     .faq-col p {

@@ -8,7 +8,7 @@ export const CheckoutItem = (props) => {
 
   return (
     <div className="checkItem">
-        <img src={image} />
+        <img src={image} alt={name}/>
         <h3>{name}</h3>
         <p>RM{price}</p>      
         <div className="countHandler">

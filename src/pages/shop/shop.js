@@ -21,7 +21,9 @@ export const Shop = () => {
             </div>
             <div >
             {filterPizzaName.length === 0 ? (
+                <div className="content-container">
                 <p>Sorry, No matching Product found.</p>
+                </div>
             ) : (
                 <div className='content-container'>
                     <h2 className="product-heading">Signature Pizza</h2>

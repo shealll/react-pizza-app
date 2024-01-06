@@ -7,6 +7,7 @@ import {Footer} from './components/Footer.js';
 import {Shop} from './pages/shop/shop.js';
 import {Cart} from './pages/cart/cart.js';
 import {Checkout} from './pages/checkout/checkout.js';
+import {ThankYou} from './pages/thankyou.js';
 
 import { PizzaContextProvider } from './context/pizza-context.js';
 
@@ -18,9 +19,10 @@ return (
         <NavBar />
         <div className="App">
         <Routes>
-          <Route path="/react-pizza-app" element={<Shop />} />
+          <Route path="/" element={<Shop />} />
           <Route path="/cart" element={<Cart />} />
           <Route path="/checkout" element={<Checkout />} />
+          <Route path="/thank-you" element={<ThankYou />} />
         </Routes>
         </div>
       </Router>
