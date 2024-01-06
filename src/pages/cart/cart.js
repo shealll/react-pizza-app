@@ -28,7 +28,7 @@ export const Cart = () => {
                 <p id="instructions"> Delivery fees will be shown after you review order </p>
               </div>
               <div className="align-button">
-                <button onClick={() => navigate("/")}> Continue Shopping </button>
+                <button onClick={() => navigate("/react-pizza-app")}> Continue Shopping </button>
                 <button
                   onClick={() => {
                     navigate("/checkout");
@@ -42,7 +42,7 @@ export const Cart = () => {
             <div className="checkout">
               <h2>Your Cart is Empty! <br></br>Start Ordering our Pizza!</h2>
               <div className="align-button">
-                <button onClick={() => navigate("/")}> Continue Shopping </button>
+                <button onClick={() => navigate("/react-pizza-app")}> Continue Shopping </button>
               </div>
             </div>
           )}

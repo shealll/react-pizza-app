@@ -19,7 +19,7 @@ return (
         <NavBar />
         <div className="App">
         <Routes>
-          <Route path="/" element={<Shop />} />
+          <Route path="/react-pizza-app" element={<Shop />} />
           <Route path="/cart" element={<Cart />} />
           <Route path="/checkout" element={<Checkout />} />
           <Route path="/thank-you" element={<ThankYou />} />

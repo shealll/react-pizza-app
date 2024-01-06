@@ -9,7 +9,7 @@ export const NavBar = () =>{
 		<div className="App-container">
 			<header className="App-header">
 				<div className="Nav-left">
-					<Link to="/"  className="Nav-link">
+					<Link to="/react-pizza-app"  className="Nav-link">
 						<h1 className="App-title">Bananas Pizzeria</h1>
 						<span><Pizza size={38} weight="duotone"/></span>
 					</Link>

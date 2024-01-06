@@ -9,7 +9,7 @@ export const ThankYou = () => {
             <p>Your order was successful and you will be notified when your item is on the way.</p>
             <h3>Estimated Time: 60 minutes</h3>
 
-            <Link to="/" className="site-button">
+            <Link to="/react-pizza-app" className="site-button">
                     Back to Site
             </Link>
 

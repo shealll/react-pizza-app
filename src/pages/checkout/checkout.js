@@ -245,7 +245,7 @@ export const Checkout = () => {
             <div className="checkout">
               <h2>Your Cart is Empty! <br></br>Start Ordering our Pizza!</h2>
               <div className="align-button">
-                <button onClick={() => navigate("/")}> Continue Shopping </button>
+                <button onClick={() => navigate("/react-pizza-app")}> Continue Shopping </button>
               </div>
             </div>
         )}
